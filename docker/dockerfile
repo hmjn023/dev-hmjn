@@ -1,0 +1,10 @@
+FROM node
+
+WORKDIR /usr/src/app
+RUN git clone https://github.com/Moomink/gionsai_5j_server
+WORKDIR /usr/src/app/gionsai_5j_server
+RUN yarn install
+EXPOSE 18526
+CMD ["node","src/index.js"]
+
+
