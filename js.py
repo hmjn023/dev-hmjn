@@ -2,11 +2,12 @@ import json
 
 no = 0
 groups = 0
+reserve = []
 
 data = {
         "no": no,
         "groups": groups,
-        "reserve": []
+        "reserve": reserve
 }
 
 with open("data.json", "w") as f:
