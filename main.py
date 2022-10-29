@@ -24,7 +24,8 @@ font_title = ImageFont.truetype(path, size=size_title)
 font_main = ImageFont.truetype(path, size=size_main)
 font_middle = ImageFont.truetype(path, size=size_middle)
 
-for i in range(99999999):
+# for i in range(99999999):
+while True:
     mode = input()
     if(mode=="m"):
         groups-=1
@@ -32,7 +33,7 @@ for i in range(99999999):
     elif(mode=="p"):
         groups+=1
         no+=1
-        dt_groupsw = datetime.datetime.now()+datetime.timedelta(minutes=15*groups)
+        dt_groupsw = datetime.datetime.now()+datetime.timedelta(minutes=10*groups)
         img = Image.new("RGB", (width, height), (240, 210, 160, 90))
         draw = ImageDraw.Draw(img, "RGBA")
         draw.arc((0-410, height-410, 410, height+410), start=0, end=360, fill=(255, 0, 0, 90), width=10)
@@ -59,7 +60,7 @@ for i in range(99999999):
     elif(mode=="g"):
         groups = int(input("how many waiting groups? : "))
         no+=1
-        dt_groupsw = datetime.datetime.now()+datetime.timedelta(minutes=15*groups)
+        dt_groupsw = datetime.datetime.now()+datetime.timedelta(minutes=10*groups)
         img = Image.new("RGB", (width, height), (240, 210, 160, 90))
         draw = ImageDraw.Draw(img, "RGBA")
         draw.arc((0-410, height-410, 410, height+410), start=0, end=360, fill=(255, 0, 0, 90), width=10)
@@ -86,3 +87,6 @@ for i in range(99999999):
     elif(mode=="q"):
         print("quit")
         exit()
+    else:
+        print("m(minus): 退出時にこれをする")
+        print("p(plus and print): 人が来たときにこれをする")
